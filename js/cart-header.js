@@ -81,7 +81,7 @@ document.getElementById('checkoutBtn')?.addEventListener('click', async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:4000/create-checkout-session', {
+    const response = await fetch('http://viewallet.shopall-products/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: cart })
@@ -162,7 +162,7 @@ document.querySelectorAll('.apple-pay').forEach(button => {
     const currentUrl = window.location.href;
 
     try {
-      const response = await fetch('http://127.0.0.1:4000/create-checkout-session', {
+      const response = await fetch('http://viewallet.shop/all-products/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
