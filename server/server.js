@@ -7,7 +7,7 @@ const app = express();
 
 // Permite peticiones desde tu frontend servido en estos orígenes
 app.use(cors({
-  origin: ['http://localhost:5500', 'http://127.0.0.1:5500']
+  origin: ['http://viewallet.shop', 'http://viewallet.shop']
 }));
 
 app.use(express.json());
@@ -28,8 +28,8 @@ app.post('/create-checkout-session', async (req, res) => {
   payment_method_types: ['card'],
   mode: 'payment',
   line_items,
-  success_url: 'http://localhost:5500/success.html',
-  cancel_url: 'http://localhost:5500/shop.html',
+  success_url: 'http://viewallet.shop/success.html',
+  cancel_url: 'http://viewallet.shop/shop.html',
   allow_promotion_codes: true,  // <-- Esto es clave
 });
     res.json({ url: session.url });
@@ -41,5 +41,5 @@ app.post('/create-checkout-session', async (req, res) => {
 
 const PORT = 4000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://viewallet.shop:${PORT}`);
 });
